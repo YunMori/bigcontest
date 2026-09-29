@@ -6,11 +6,12 @@
 
 ## 공개 시연
 
-- 배포 주소: <https://yunmori.github.io/bigcontest/> (GitHub Pages 배포 성공 후 사용)
+- 배포 주소: <https://yunmori.github.io/bigcontest/>
 - 저장소: <https://github.com/YunMori/bigcontest>
 - 서울 행정동 427개, 2026-07-01 경계 스냅샷. 시연 기준일 2026-09-29.
 - API 키·로그인·별도 서버 없이 동작하는 브라우저 mock 모드.
 - 기본 관측 / 위험 급상승 / 자료 누락 / 정책 만료 / 정책 공백 시나리오.
+- 2026-09-30 KST 공개 배포 및 실제 주소의 브라우저 검증 완료. [릴리스·검증 기록](docs/RELEASE.md)
 
 ## 로컬 실행
 

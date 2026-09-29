@@ -27,7 +27,7 @@ Vite의 프로젝트 사이트 base는 `/bigcontest/`다. 동적으로 만드는
 ## 3. GitHub Pages 최초 배포
 
 1. 통합한 서비스와 lockfile, 저장소 루트 workflow를 GitHub에 올린다. 실제 기본 브랜치와 workflow의 push 대상 브랜치가 일치하는지 확인한다.
-2. GitHub 저장소의 **Settings → Pages → Build and deployment → Source → GitHub Actions**를 선택한다. 조직 정책이나 저장소 권한 때문에 변경할 수 없으면 관리자에게 이 설정만 요청한다.
+2. GitHub 저장소의 **Settings → Pages → Build and deployment → Source → GitHub Actions**를 선택한다. **Settings → Environments → github-pages → Deployment branches and tags**에서 실제 배포 브랜치 `main`을 허용한다. 최초 환경에 `master`만 등록돼 있으면 `main` 배포가 차단될 수 있다. 조직 정책이나 저장소 권한 때문에 변경할 수 없으면 관리자에게 해당 설정만 요청한다.
 3. Actions의 Pages workflow가 다음 구성을 갖는지 확인한다. 설치·검사·빌드는 `frontend/`, npm 캐시 lockfile은 `frontend/package-lock.json`, 업로드 대상은 `frontend/dist`여야 한다. 프로젝트 base는 `/bigcontest/`, 시연 모드는 `mock`이다.
 4. 빌드 후 `actions/configure-pages`, `actions/upload-pages-artifact`, `actions/deploy-pages`로 산출물을 게시한다. deploy job은 build 성공에 의존해야 하며 `github-pages` environment와 배포 URL 출력을 설정한다.
 5. 토큰 권한은 필요한 범위로 설정한다. 저장소 읽기에 `contents: read`, Pages 게시에 `pages: write`, 배포 신원 확인에 `id-token: write`가 필요하다. 현재 workflow는 `github-pages` concurrency 그룹으로 동시 배포를 제어한다. PR 검사는 가능하지만 미검토 PR 코드를 공개 배포하지 않는다.
