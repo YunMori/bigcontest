@@ -1,0 +1,23 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+**/node_modules/
+**/dist/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/.ruff_cache/
+**/*.pyc
+**/*.tsbuildinfo
+**/.coverage
+**/coverage/
+**/playwright-report/
+**/test-results/
+.artifacts/
+*.log
+
+# Original contest/research datasets never belong in this demo repository.
+/data/
+/output/
+/tmp/
